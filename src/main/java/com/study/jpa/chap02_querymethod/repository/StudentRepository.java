@@ -26,7 +26,7 @@ public interface StudentRepository
 
 
   @Query("SELECT st FROM Student st WHERE st.name LIKE %:nm%")
-  Student searchMyNamesWithJPQL(@Param("nm") String name);
+  List<Student> searchByNamesWithJPQL(@Param("nm") String name);
 
   // JPQL로 수정 삭제 쿼리 쓰기
   @Modifying // 조회가 아닐 경우 무조건 붙여야함

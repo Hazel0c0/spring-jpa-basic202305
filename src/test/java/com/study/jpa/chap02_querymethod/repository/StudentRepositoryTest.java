@@ -120,17 +120,17 @@ class StudentRepositoryTest {
   }
 
   @Test
-  @DisplayName("testFindCityWithJPQL")
-  void testSearchMyNamesWithJPQL() {
+  @DisplayName("testSearchByNamesWithJPQL")
+  void testSearchByNamesWithJPQL() {
     //given
     String name = "춘";
     //when
-    Student student = studentRepository.getByCityWithJPQL(name);
+    List<Student> students = studentRepository.searchByNamesWithJPQL(name);
     //then
-    assertEquals("대길이", student.getName());
+    assertEquals(2, students.size());
 
     System.out.println("\n\n\n");
-    System.out.println("student = " + student);
+    System.out.println("student = " + students);
     System.out.println("\n\n\n");
   }
 

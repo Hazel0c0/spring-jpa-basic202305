@@ -16,7 +16,7 @@ import javax.persistence.*;
 public class Student {
   @Id
   @Column(name = "stu_id")
-  @GeneratedValue
+  @GeneratedValue(generator = "uid")
   @GenericGenerator(strategy = "uuid", name ="uid")
   private String id;
 
