@@ -23,7 +23,7 @@ public class HashTag {
   private String tagName; //해시태그 이름
 
   // 연관관계의 주인인 해시태그에서 단방향 설정
-  @ManyToOne(fetch = FetchType.LAZY)
+  @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
   @JoinColumn(name = "post_no")
   private Post post;
   // 양방향은 필요하다면 설정 해주면 됨

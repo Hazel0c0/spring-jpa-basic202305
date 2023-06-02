@@ -39,7 +39,7 @@ public class Post {
   private LocalDateTime updateDate; // 수정시간
 
   // db에 넣는게 아니고 연관관계를 나타낸다.
-  @OneToMany(mappedBy = "post") // 상대방 별칭을 적어줘야 한다
+  @OneToMany(mappedBy = "post", orphanRemoval = true) // 상대방 별칭을 적어줘야 한다
   @Builder.Default
   private List<HashTag> hashTags = new ArrayList<>();
 
